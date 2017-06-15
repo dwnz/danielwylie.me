@@ -1,0 +1,19 @@
+@import "../common/colors";
+@import "../common/config";
+
+a {
+  color: $base-colour;
+  transition: all $menu-hover-speed;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+
+  @media print {
+    background: white;
+    color: #000;
+  }
+
+  &:hover {
+    color: $base-colour - 20;
+    text-decoration: underline;
+  }
+}

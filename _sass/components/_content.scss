@@ -1,0 +1,79 @@
+.page {
+  position: absolute;
+  top: 500px;
+  left: 0;
+  right: 0;
+  background: white;
+}
+
+section {
+  .content {
+    margin: 20px;
+
+    @media(min-width: 1024px) {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h4 {
+      font-size: 1.5rem;
+    }
+
+    h5, ul {
+      font-size: 1rem;
+    }
+  }
+
+  &.section--withtitle {
+    div.section-title {
+      background: #17A0FE;
+      color: #fff;
+      font-size: 24px;
+      margin-bottom: 31px;
+      padding: 20px;
+
+      @media(min-width: 1024px) {
+        padding: 40px;
+      }
+
+      h3 {
+        max-width: 800px;
+        margin: 0 auto;
+        font-family: "Open Sans", sans-serif;
+        font-size: 3rem;
+        letter-spacing: -2px;
+        text-indent: -3px;
+        padding: 20px 0;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  p {
+    top: 90px;
+    font-size: 18px;
+    line-height: 31px;
+    margin-bottom: 31px;
+  }
+}
+
+.job {
+  background: radial-gradient(at bottom, lighten(#f7f5f6, 1), lighten(#f7f5f6, 3) 80%);
+  padding: 20px 0 30px 0;
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .job-company {
+    font-size: 28px;
+  }
+
+  .job-position {
+    font-size: 16px;
+    line-height: 32px;
+    margin-bottom: 20px;
+    color: lighten(black, 50);
+  }
+}

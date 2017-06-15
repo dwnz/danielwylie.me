@@ -1,0 +1,180 @@
+.techstack--title {
+  display: none;
+}
+
+.techstack {
+  margin-bottom: 10px;
+
+  li {
+    text-indent: -9999px;
+    background: no-repeat;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+
+    &:hover:after {
+      background: #000;
+      position: absolute;
+      padding: 10px;
+      display: block;
+      color: white;
+      text-align: center;
+      text-indent: 0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #999;
+    }
+
+    &.techstack--github {
+      background-image: url(/media/icons/github.png);
+
+      &:hover:after {
+        content: 'Github';
+      }
+    }
+
+    &.techstack--angular {
+      background-image: url(/media/icons/angular.png);
+
+      &:hover:after {
+        content: 'Angular';
+      }
+    }
+
+    &.techstack--node {
+      background-image: url(/media/icons/node.png);
+
+      &:hover:after {
+        content: 'NodeJS';
+      }
+    }
+
+    &.techstack--mongo {
+      background-image: url(/media/icons/mongo.png);
+
+      &:hover:after {
+        content: 'MongoDB';
+      }
+    }
+
+    &.techstack--grunt {
+      background-image: url(/media/icons/grunt.png);
+
+      &:hover:after {
+        content: 'Grunt';
+      }
+    }
+
+    &.techstack--circleci {
+      background-image: url(/media/icons/circleci.png);
+
+      &:hover:after {
+        content: 'CircleCI';
+      }
+    }
+
+    &.techstack--expressjs {
+      background-image: url(/media/icons/express.png);
+
+      &:hover:after {
+        content: 'ExpressJS';
+      }
+    }
+
+    &.techstack--dotnet {
+      background-image: url(/media/icons/dotnet.png);
+
+      &:hover:after {
+        content: '.NET';
+      }
+    }
+
+    &.techstack--visualstudio {
+      background-image: url(/media/icons/visualstudio.png);
+
+      &:hover:after {
+        content: 'Visual Studio';
+      }
+    }
+
+    &.techstack--mysql {
+      background-image: url(/media/icons/mysql.png);
+
+      &:hover:after {
+        content: 'MySQL';
+      }
+    }
+
+    &.techstack--sqlserver {
+      background-image: url(/media/icons/sqlserver.png);
+
+      &:hover:after {
+        content: 'SQL Server';
+      }
+    }
+
+    &.techstack--teamcity {
+      background-image: url(/media/icons/teamcity.png);
+
+      &:hover:after {
+        content: 'Teamcity';
+      }
+    }
+
+    &.techstack--knockout {
+      background-image: url(/media/icons/knockout.png);
+
+      &:hover:after {
+        content: 'KnockoutJS';
+      }
+    }
+
+    &.techstack--azure {
+      background-image: url(/media/icons/azure.png);
+
+      &:hover:after {
+        content: 'Windows Azure';
+      }
+    }
+
+    &.techstack--aws {
+      background-image: url(/media/icons/aws.png);
+
+      &:hover:after {
+        content: 'AWS';
+      }
+    }
+
+    &.techstack--windows {
+      background-image: url(/media/icons/windows.png);
+
+      &:hover:after {
+        content: 'Windows';
+      }
+    }
+
+    &.techstack--ubuntu {
+      background-image: url(/media/icons/ubuntu.jpg);
+
+      &:hover:after {
+        content: 'Unbuntu Linux';
+      }
+    }
+
+    &.techstack--xamarin {
+      background-image: url(/media/icons/xamarin.png);
+
+      &:hover:after {
+        content: 'Xamarin';
+      }
+    }
+
+    &.techstack--jquery {
+      background-image: url(/media/icons/jquery.png);
+
+      &:hover:after {
+        content: 'JQuery';
+      }
+    }
+  }
+}

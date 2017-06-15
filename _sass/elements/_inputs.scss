@@ -1,0 +1,172 @@
+@import "../common/config";
+@import "../common/colors";
+
+form {
+  div.group {
+    margin-bottom: 20px;
+  }
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea, select, input[type="number"], input[type="tel"] {
+  border: $input-border-thickness solid $input-border-colour;
+  background: white;
+  padding: $input-padding;
+  font-size: $input-font-size;
+  border-radius: $input-border-radius;
+  color: $text-colour;
+  display: block;
+  width: 100%;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  &:focus {
+    outline-width: 0;
+    border-color: $input-border-colour;
+  }
+
+  &.input--smaller {
+    padding: $input-padding - 10;
+  }
+
+  &.input--inline {
+    display: inline;
+  }
+}
+
+label {
+  font-size: 12px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.validation-error {
+  &::before {
+    position: relative;
+    top: 16px;
+    left: -14px;
+    content: '!';
+    width: 14px;
+    height: 19px;
+    border-radius: 100%;
+    background: $base-colour - 30;
+    display: inline-block;
+    border: $input-border-thickness solid $grey-border;
+    margin-right: 8px;
+    padding-left: 10px;
+    padding-top: 3px;
+    color: white;
+  }
+}
+
+.form-group {
+  margin-bottom: $input-padding;
+
+  &.pad {
+    padding-right: $input-padding;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+}
+
+textarea {
+  margin-bottom: $input-padding;
+}
+
+select {
+  width: 100%;
+  height: $input-padding * 4;
+  padding: 0;
+}
+
+.input-extend {
+  &.input-extend--append {
+    input {
+      border-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .addon {
+      background: $base-colour-light;
+      border: $input-border-thickness solid $input-border-colour;
+      border-left: 0;
+      border-radius: 0 $input-border-radius $input-border-radius 0;
+
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+
+      font-size: $input-font-size;
+      padding-top: $input-padding;
+      padding-bottom: $input-padding;
+      text-align: center;
+    }
+  }
+
+  &.input-extend--prepend {
+    input {
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .addon {
+      background: $base-colour-light;
+
+      border: $input-border-thickness solid $input-border-colour;
+      border-right: 0;
+      border-radius: $input-border-radius 0 0 $input-border-radius;
+
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+
+      font-size: $input-font-size;
+      padding-top: $input-padding;
+      padding-left: $input-padding;
+      padding-bottom: $input-padding;
+      text-align: left;
+    }
+  }
+}
+
+.input-tooltip {
+  position: absolute;
+  left: 10px;
+  top: 62px;
+  width: 280px;
+  z-index: 99;
+  opacity: 0;
+  transition: all 0.3s;
+  color: white;
+
+  &.tooltip--active {
+    opacity: 0.8;
+
+    .tooltip {
+      opacity: 1;
+    }
+  }
+
+  .tooltip-text {
+    background: #505d6d;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    border-radius: 4px;
+    top: -8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 2px 1px;
+  }
+
+  .tooltip-arrow {
+    width: 16px;
+    height: 16px;
+    background: #505d6d;
+    margin: 0 auto;
+    transform: rotate(-45deg);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 2px 1px;
+  }
+}

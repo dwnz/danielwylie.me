@@ -1,41 +1,418 @@
----
-layout: home
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-{% for post in paginator.posts %}
-<article class="post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>
-            {{ post.excerpt }}
-            <a class="read-more" href="{{ post.url }}">More &raquo;</a>
-        </p>
+    <title>Daniel Wylie - software developer, business guy, photographer dude</title>
+    <meta name="description" content="Founder of Shnappy, software developer, business guy, photographer dude."/>
+
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400"/>
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="alternate" type="application/rss+xml" title="Daniel Wylie" href="/rss/">
+</head>
+<body>
+
+<header>
+    <h1><span class="hideprint">Hi, I'm</span> Daniel Wylie</h1>
+    <h3 class="printonly">daniel@danielwylie.me | 021 233 5733</h3>
+    <h2>Software developer, business guy, photographer dude</h2>
+</header>
+
+<div class="page">
+    <section class="section--first section--about section--withtitle">
+        <div class="section-title">
+            <h3>About</h3>
+        </div>
+        <div class="content">
+
+            <p>
+                I'm a 27-year-old software developer living in Wellington, New Zealand. I love working anything that
+                involves mobile, a bit of scale and HTML/CSS, and exploring new approaches to problems.
+            </p>
+
+            <p>
+                I have a passion for technology based start ups and businesses, having attempted a few myself and from
+                being involved with small companies that have grown quickly.
+            </p>
+
+            <p>
+                Proficient in the Microsoft stack, I am comfortable working with C#, SQL, ASP.NET, MVC, Windows Azure,
+                HTML, JavaScript and CSS, to name a few. My quest for knowledge in the latest technologies never tires -
+                I'm always on the lookout for the next "thing" and ways to improve processes and work.
+            </p>
+
+            <p>
+                Outside of the Microsoft stack I have extensive experience in the awesome world of NodeJS and MongoDB,
+                having picked it over .NET for my two most recent products. To complement Node, I've spent the effort
+                learning Grunt, SASS and other open source tools to extend my knowledge of what can be done.
+            </p>
+
+            <p>
+                I enjoy big picture thinking and debates - I'm not scared to bring new ideas to the table or get dirty
+                implementing said ideas. Being part of a social team where conversation is free flowing and encouraged
+                is important to me to both create friendships and to have an enjoyable workspace.
+            </p>
+
+            <p>
+                When I'm not sitting in front of a computer, my hobbies tend to move away from the technology world,
+                generally to a more mechanical side.
+            </p>
+
+            <p>
+                I have always loved exploring how things work and figuring out how to improve them. Over the years I
+                have owned a few project cars which I have lovingly rebuilt and cared for, from simple engine repairs to
+                full paint jobs.
+            </p>
+
+            <p>
+                I have a keen passion for photography in which I have been mastering my skills and producing
+                increasingly polished photos, and have been commissioned to do work for various parties.
+            </p>
+
+            <p>
+                I have always loved exploring how things work and figuring out how to improve them - from constructing
+                ever larger Lego structures as a child and building my first computer as a very young teen, to buying
+                and doing up a bright yellow 1977 Corolla a couple of years back for a summer project. I have a keen and
+                agile mind and am always searching for new learning experiences.
+            </p>
+        </div>
     </section>
-    <footer class="post-meta">
-        <img class="author-thumb" src="//www.gravatar.com/avatar/e9fc9c3e45e6ee2451dbe59297ccda42?d=404"
-             alt="Author image" nopin="nopin"/>
-        <a href="/author/daniel-wylie/">Daniel Wylie</a>
 
-        <time class="post-date" datetime="{{ post.date | date: '%m-%d-%Y'}}">{{ post.date | date_to_string }}</time>
-    </footer>
-</article>
+    <section class="section--withtitle">
+        <div class="section-title">
+            <h3>Work</h3>
+        </div>
 
-{% endfor %}
-
-<nav class="pagination" role="navigation">
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="newer-posts">&larr; Newer posts</a>
-    {% else %}
-    {% endif %}
-
-    <span class="page-number">Page {{paginator.page}} of {{paginator.total_pages}}</span>
+        <div class="job">
+            <div class="content">
+                <h4 class="job-company">Shnappy</h4>
+                <h5 class="job-position">Founder, 2014 - Present</h5>
 
 
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="older-posts">Older Posts &rarr;</a>
-    {% else %}
-    {% endif %}
-</nav>
+                <p class="techstack--title">Key technologies</p>
+                <ul class="techstack">
+                    <li class="techstack--ubuntu">Ubuntu</li>
+                    <li class="techstack--node">Node</li>
+                    <li class="techstack--angular">Angular</li>
+                    <li class="techstack--mongo">Mongo</li>
+                    <li class="techstack--grunt">Grunt</li>
+                    <li class="techstack--circleci">CircleCI</li>
+                    <li class="techstack--expressjs">ExpressJS</li>
+                    <li class="techstack--azure">Windows Azure</li>
+                </ul>
 
+                <p>
+                    Mashing my love of photography, software development and business together, Shnappy has allowed me
+                    to build and grow a product that solves a real issue and that people love using. Moving outside of
+                    my normal comfort zone, Shnappy is built using NodeJS, Mongo and running on a Ubuntu Linux
+                    production environment which is continuous deployed and always up to date.
+                </p>
+
+                <p>
+                    <a href="https://shnappy.com" class="btn btn--smaller">Shnappy.com</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="job job--odd">
+            <div class="content">
+                <h4 class="job-company">Raygun</h4>
+                <h5 class="job-position">Senior Software Developer, 2015 - 2016</h5>
+
+                <p class="techstack--title">Key technologies</p>
+                <ul class="techstack">
+                    <li class="techstack--windows">Windows Server</li>
+                    <li class="techstack--dotnet">.NET</li>
+                    <li class="techstack--mysql">MySQL</li>
+                    <li class="techstack--node">Node</li>
+                    <li class="techstack--visualstudio">Visual Studio</li>
+                    <li class="techstack--teamcity">TeamCity</li>
+                    <li class="techstack--aws">AWS</li>
+                </ul>
+
+                <p>
+                    My role at Raygun allows me to dive deep into big-scale-high-performance problems head on. Taking
+                    what I've learnt over the years and applying it to a process that deals with millions of data points
+                    everyday has proven to be both extremely exciting and challenging at the same time. My main focus
+                    has been on improving the processing workflow to increase speed and on integrating with various
+                    software solutions.
+                </p>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="content">
+                <h4 class="job-company">NV Interactive</h4>
+                <h5 class="job-position">Technical Lead, 2013 - 2015</h5>
+
+                <p class="techstack--title">Key technologies</p>
+                <ul class="techstack">
+                    <li class="techstack--windows">Windows Server</li>
+                    <li class="techstack--dotnet">.NET</li>
+                    <li class="techstack--sqlserver">Microsoft SQL Server</li>
+                    <li class="techstack--knockout">KnockoutJS</li>
+                    <li class="techstack--visualstudio">Visual Studio</li>
+                    <li class="techstack--teamcity">TeamCity</li>
+                    <li class="techstack--azure">Windows Azure</li>
+                </ul>
+
+                <p>
+                    After a 6 year trip with Xero, I decided it was time to do something new - that something new was NV
+                    Interactive. We work with some huge worldwide brands building slick websites and applications. My
+                    role involved mentoring junior developers and working with project shareholders to come up with a
+                    technical solution to fit within a budget. Specialising in Umbraco and .NET development, this role
+                    allowed me to grow immensely as a developer. I focused on pushing new processes and technology into
+                    our workflow and had some big wins around continuous deployment and moving to Github.
+                </p>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="content">
+                <h4 class="job-company">Xero</h4>
+                <h5 class="job-position">Software Developer, 2007 - 2012</h5>
+
+                <p class="techstack--title">Key technologies</p>
+                <ul class="techstack">
+                    <li class="techstack--windows">Windows Server</li>
+                    <li class="techstack--dotnet">.NET</li>
+                    <li class="techstack--sqlserver">Microsoft SQL Server</li>
+                    <li class="techstack--visualstudio">Visual Studio</li>
+                    <li class="techstack--teamcity">TeamCity</li>
+                </ul>
+
+                <p>
+                    I started at Xero as a software developer in November 2007, immediately after graduating from
+                    Wellington High School. In that time I have worked on a range of projects - from the marketing
+                    website, importing hundreds of thousands of lines per day in the banking import environment, to the
+                    core accounting application itself. I built the original banking import system that automatically
+                    imported customers data into the accounting system. As part of that ongoing project, I also launched
+                    an internal management tool used by the banking team to setup and diagnose customers feeds.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section--withtitle">
+        <div class="section-title">
+            <h3>Side projects</h3>
+        </div>
+
+        <div class="job">
+            <div class="content">
+                <h4 class="job-company">hooq</h4>
+                <h5 class="job-position">Founder, 2015 - Present</h5>
+
+
+                <p class="techstack--title">Key technologies</p>
+                <ul class="techstack">
+                    <li class="techstack--ubuntu">Ubuntu</li>
+                    <li class="techstack--node">Node</li>
+                    <li class="techstack--angular">Angular</li>
+                    <li class="techstack--mongo">Mongo</li>
+                    <li class="techstack--grunt">Grunt</li>
+                    <li class="techstack--circleci">CircleCI</li>
+                    <li class="techstack--expressjs">ExpressJS</li>
+                    <li class="techstack--azure">Windows Azure</li>
+                </ul>
+
+                <p>
+                    Mashing my love of photography, software development and business together, Shnappy has allowed me
+                    to build and grow a product that solves a real issue and that people love using. Moving outside of
+                    my normal comfort zone, Shnappy is built using NodeJS, Mongo and running on a Ubuntu Linux
+                    production environment which is continuous deployed and always up to date.
+                </p>
+
+                <p>
+                    <a href="https://hooq.io" class="btn btn--smaller">hooq.io</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="job job--odd">
+            <div class="content">
+                <h4 class="job-company">QuizBlaster</h4>
+                <h5 class="job-position">Co-founder &amp; Lead developer, 2012 - Present</h5>
+
+                <p class="techstack--title">Key technologies</p>
+                <ul class="techstack">
+                    <li class="techstack--windows">Windows Server</li>
+                    <li class="techstack--dotnet">.NET</li>
+                    <li class="techstack--sqlserver">Microsoft SQL Server</li>
+                    <li class="techstack--visualstudio">Visual Studio</li>
+                    <li class="techstack--azure">Windows Azure</li>
+                    <li class="techstack--xamarin">Xamarin</li>
+                </ul>
+
+                <p>
+                    QuizBlaster is a multiplayer, everyone vs everyone quiz game that runs on Windows 8, Windows Phones,
+                    iPhones and iPads, and is powered by an Azure backend. Built over a few months at the end of 2013,
+                    and launched into the app stores soon after, QuizBlaster has continued to grow and expand. All three
+                    client versions are written in C# - the iOS version using Xamarin. The backend runs on Azure Cloud
+                    Services and makes use of table storage, queues and push notifications.
+                </p>
+
+                <p><a href="http://quizblaster.com" class="btn btn--smaller">QuizBlaster.com</a></p>
+            </div>
+        </div>
+        <div class="job job--odd">
+            <div class="content">
+                <h4 class="job-company">Kustom Page</h4>
+                <h5 class="job-position">Founder, 2005 - 2014</h5>
+
+                <p class="techstack--title">Key technologies</p>
+                <ul class="techstack">
+                    <li class="techstack--windows">Windows Server</li>
+                    <li class="techstack--dotnet">.NET</li>
+                    <li class="techstack--sqlserver">Microsoft SQL Server</li>
+                    <li class="techstack--jquery">JQuery</li>
+                    <li class="techstack--visualstudio">Visual Studio</li>
+                    <li class="techstack--teamcity">TeamCity</li>
+                    <li class="techstack--azure">Windows Azure</li>
+                </ul>
+
+                <p>
+                    I wrote the very first version of Kustom Page over a two week school holiday in 2005. More recently,
+                    however, I have completely rewritten Kustom Page in ASP.NET, and launched it as a hosted solution
+                    that allows small businesses to quickly and easily get their business into the online world. I use
+                    Kustom Page to experiment with and learn new technologies, and to also learn how to run my own
+                    startup.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section--withtitle">
+        <div class="section-title">
+            <h3>Open source</h3>
+        </div>
+
+        <div class="content">
+            <p>
+                I'm a big fan of open source and publishing code online for others to use both in their products and as
+                reference, I strive to publish as many useful components as I can.
+            </p>
+
+            <div class="boxes boxes--three hideprint">
+                <div class="box">
+                    <a href="https://github.com/dwnz">
+                        <img src="/media/icons/github.png">
+                        <span>Github/dwnz</span>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="https://www.npmjs.com/~dwnz">
+                        <img src="/media/icons/node.png">
+                        <span>npmjs/~dwnz</span>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="https://github.com/appmechanix">
+                        <img src="/media/icons/github.png">
+                        <span>Github/appmechanix</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="printonly">
+                <ul>
+                    <li>github.com/dwnz</li>
+                    <li>github.com/appmechanix</li>
+                    <li>npmjs.com/~dwnz</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section--withtitle">
+        <div class="section-title">
+            <h3>Education</h3>
+        </div>
+        <div class="content">
+            <p>
+                I attended and graduated from Wellington High School. Over my five years there I studied the core
+                syllabus of English, maths and sciences, along with various computer courses and a well-rounded range of
+                other subjects.
+            </p>
+
+            <h4>Achievements</h4>
+            <h5>2013</h5>
+
+            <ul class="list">
+                <li>Microsoft Certified Solutions Developer: Web Applications</li>
+            </ul>
+
+            <h5>2007</h5>
+
+            <ul class="list">
+                <li>Certificate of Excellence - Year 13 Information Science</li>
+                <li>Certificate of Excellence - Year 13 Digital Media</li>
+                <li>NCEA Level 3 with University Entrance requirements met</li>
+                <li>Contributed to the Wellington Youth Tech Hui</li>
+            </ul>
+
+            <h5>2006</h5>
+
+            <ul class="list">
+                <li>Certificate of Excellence - Year 12 Information Science</li>
+                <li>Certificate of Excellence - Year 12 Digital Media
+                    2005
+                </li>
+                <li>First in class - Year 11 Information Science</li>
+                <li>First in class - Year 11 Digital Media</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section--withtitle">
+        <div class="section-title">
+            <h3>Hobbies</h3>
+        </div>
+        <div class="content">
+            <h4>Computers</h4>
+
+            <p>
+                I first started programming when I was 12, after coming home from school one day and asking dad how it
+                was done. I spent my teenage years building and fixing my own computers with whatever parts I could find
+                lying around.
+            </p>
+
+            <p>
+                Building websites and web applications became my passion around 2007 when I was first introduced to the
+                idea of them at Xero. I believe there's still lots of room for innovation in this space and still some
+                awesome applications yet to be built.
+            </p>
+
+            <h4>Photography</h4>
+
+            <p>
+                I picked up my first "proper" camera in 2011 and haven't looked back. I focus on capturing images that
+                people haven't seen before, even if it's a common tourist attraction.
+            </p>
+
+            <h4>Travelling</h4>
+
+            <p>(I can call this a hobby, right?)</p>
+
+            <p>
+                There's very little that compares to travelling to a far away land and exploring their cities, food and
+                culture for me. I've always dreamed of living overseas and immersing myself into another way of life.
+                Right after school I started saving for a trip to Europe that included the USA, England, Spain and
+                Italy. I have since returned to England another time in 2011. In 2013 I spent 3 weeks in the United
+                States over summer exploring the Seattle and San Francisco areas.
+            </p>
+        </div>
+    </section>
+</div>
+</body>
+</html>

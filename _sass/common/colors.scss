@@ -1,0 +1,30 @@
+$base-colour: #3D647F;
+$base-colour-light: lighten($base-colour, 20%);
+
+$darkgrey-colour: #666666;
+
+/* Colours */
+
+$text-colour: #6f6f6f;
+$light-text-colour: #d1cfcf;
+$success-green: #7AB709;
+$failure-red: red;
+$white-pink: #fbd9e8;
+$footer-link-colour: white;
+$light-red: #f2dede;
+$light-green: #e3f0cc;
+$dark-base-colour: $base-colour - 20;
+$info-colour: lightblue;
+
+$base-colour-light: lighten($base-colour, 20%);
+
+/* Borders */
+
+$grey-border: #f7f5f6;
+
+$input-background-colour: $base-colour;
+$input-border-colour: $base-colour;
+
+/* TEXT */
+
+$h1-color: $base-colour;
