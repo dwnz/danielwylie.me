@@ -84,39 +84,39 @@ function AlapcaRun(canvas) {
     // Load assets
     var img = new Image();
     img.onload = uiHelper.LoadAndSizeImage;
-    img.src = '/img/_11_background.png';
+    img.src = '/alpacarun/img/_11_background.png';
 
     var trees = new Image();
     trees.onload = uiHelper.LoadAndSizeImage;
-    trees.src = '/img/_02_trees and bushes.png';
+    trees.src = '/alpacarun/img/_02_trees and bushes.png';
 
     var ground = new Image();
     ground.onload = uiHelper.LoadAndSizeImage;
-    ground.src = '/img/_01_ground.png';
+    ground.src = '/alpacarun/img/_01_ground.png';
 
     var clouds = new Image();
     clouds.onload = uiHelper.LoadAndSizeImage;
-    clouds.src = '/img/_08_clouds.png';
+    clouds.src = '/alpacarun/img/_08_clouds.png';
 
     var clouds2 = new Image();
     clouds2.onload = uiHelper.LoadAndSizeImage;
-    clouds2.src = '/img/_07_huge_clouds.png';
+    clouds2.src = '/alpacarun/img/_07_huge_clouds.png';
 
     var bushes = new Image();
     bushes.onload = uiHelper.LoadAndSizeImage;
-    bushes.src = '/img/_04_bushes.png';
+    bushes.src = '/alpacarun/img/_04_bushes.png';
 
     var alpaca = new Image();
     alpaca.onload = uiHelper.LoadAndSizeImage;
-    alpaca.src = '/img/alpaca.png';
+    alpaca.src = '/alpacarun/img/alpaca.png';
 
     var star = new Image();
-    star.src = '/img/apple.png';
+    star.src = '/alpacarun/img/apple.png';
 
     // Check that the browser supports audio
     var ding;
     if (Audio) {
-        ding = new Audio('/sound/ding.wav');
+        ding = new Audio('/alpacarun/sound/ding.wav');
     } else {
         ding = {
             play: function () {
@@ -158,7 +158,7 @@ function AlapcaRun(canvas) {
                 alpacaHeight
             );
         };
-        splash.src = '/img/splash.jpg';
+        splash.src = '/alpacarun/img/splash.jpg';
     };
 
     // CODEZ
@@ -273,7 +273,7 @@ function AlapcaRun(canvas) {
         points++;
 
         if (Audio && t.playSound) {
-            var dinger = new Audio('/sound/ding.wav');
+            var dinger = new Audio('/alpacarun/sound/ding.wav');
             dinger.play();
         }
     }
