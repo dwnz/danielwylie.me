@@ -1,0 +1,2 @@
+name,latitude,longitude,elevation
+W09701,S41.3669553,E174.9007066,0

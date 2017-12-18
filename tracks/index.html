@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- This stylesheet contains specific styles for displaying the map
+         on this page. Replace it with your own styles as described in the
+         documentation:
+         https://developers.google.com/maps/documentation/javascript/tutorial -->
+     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="/tracks/style.css">
+
+    <title>North Island Tracks</title>
+  </head>
+  <body>
+    <div id="loader">Loading waypoints...</div>
+    <div id="map"></div>
+    <script>
+      var map;
+
+      function initMap() {
+        // Create a map object and specify the DOM element for display.
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -38.1261696, lng: 175.3187226},
+          zoom: 7
+        });
+      }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN1Shj6dO4cuohAEXZM_e5_QXIYyVQy-M&amp;callback=initMap"
+    async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/async/2.6.0/async.min.js"></script>
+
+    <script src="/tracks/web.js"></script>
+  </body>
+</html>
