@@ -11,7 +11,7 @@
  });
 
  function GrabData(file, key, cb) {
-   $.get(file.path, function(data) {
+   $.get('/tracks/' + file.path, function(data) {
      var lines = data.split('\n');
 
      async.eachOfLimit(lines,
