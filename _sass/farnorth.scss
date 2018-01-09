@@ -1,0 +1,66 @@
+.overland {
+  header {
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 95%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    h1, h2 {
+      z-index: 9999;
+      position: relative;
+      color: white;
+      text-align: center;
+      top: 45%;
+    }
+
+    h1 {
+      font-size: 6rem;
+      font-weight: 400;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 200;
+      letter-spacing: 2px;
+      font-style: italic;
+    }
+  }
+
+  section {
+    max-width: 1200px;
+    margin: 40px auto;
+
+    @media(max-width: 768px) {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .center-small {
+    @media(max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  &.farnorth {
+    header {
+      background-image: url(/farnorth/img/hero.jpg);
+    }
+  }
+}

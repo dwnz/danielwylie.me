@@ -1,50 +1,186 @@
- $(function() {
-   alert("NOTE: Tracks may not be public, don't go on private property etc etc. You accept all responsiblity");
+$(function () {
+    //alert("NOTE: Tracks may not be public, don't go on private property etc etc. You accept all responsibility");
 
-   setTimeout(function() {
-     $.get('/tracks/tracks.json', function(data) {
-       async.eachOfLimit(data, 5, GrabData, function() {
-         $('#loader').remove();
-       });
-     });
-   }, 1000);
- });
+    map.on('load', function () {
+        $.get('/tracks/tracks.json', function (data) {
+            async.eachOfLimit(data, 5, GrabData, function () {
+                $('#loader').remove();
+            });
+        });
+    });
+});
 
- function GrabData(file, key, cb) {
-   $.get('/tracks/' + file.path, function(data) {
-     var lines = data.split('\n');
+function GrabData(file, key, cb) {
+    $.get('/tracks/' + file.path, function (data) {
+        var lines = data.split('\n');
 
-     async.eachOfLimit(lines,
-       10,
-       function(line, key, next) {
-         var coords = line.split(',');
-         DrawWaypoints(file.path, coords[1], coords[2], next);
-       },
-       function() {
-         cb();
-       }
-     );
+        var coords = [];
 
-   });
- }
+        async.eachOfLimit(lines,
+            10,
+            function (line, key, next) {
+                if (line.indexOf('name') !== -1) {
+                    return next();
+                }
 
- function DrawWaypoints(file, lat, long, cb) {
-   if (!lat || !long) {
-     return cb();
-   }
+                var lineData = line.split(',');
 
-   var pos = {
-     lat: parseFloat(lat.replace('S', '-')),
-     lng: parseFloat(long.replace('E', ''))
-   };
+                if (!lineData[1] && !lineData[1]) {
+                    return next();
+                }
 
-   console.log(pos);
+                var pos = {
+                    lat: parseFloat(lineData[1].replace('S', '-')),
+                    lng: parseFloat(lineData[2].replace('E', ''))
+                };
 
-   var marker = new google.maps.Marker({
-     map: map,
-     position: pos,
-     title: file
-   });
+                coords.push([pos.lng, pos.lat]);
 
-   cb();
- }
+                next();
+            },
+            function () {
+                map.addLayer({
+                    "id": file.path,
+                    "type": "line",
+                    "source": {
+                        "type": "geojson",
+                        "data": {
+                            "type": "Feature",
+                            "properties": {},
+                            "geometry": {
+                                "type": "LineString",
+                                "coordinates": coords
+                            }
+                        }
+                    },
+                    "layout": {
+                        "line-join": "round",
+                        "line-cap": "round"
+                    },
+                    "paint": {
+                        "line-color": "#888",
+                        "line-width": 8
+                    }
+                });
+
+                var trackName = file.path
+                    .replace('parsedtrackfiles/', '')
+                    .replace('.txt', '')
+                    .replace('_', ' ')
+                    .replace('_', ' ')
+                    .replace('_', ' ');
+
+                map.addLayer({
+                    "id": "points" + new Date().getTime(),
+                    "type": "symbol",
+                    "source": {
+                        "type": "geojson",
+                        "data": {
+                            "type": "FeatureCollection",
+                            "features": [{
+                                "type": "Feature",
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": coords[0]
+                                },
+                                "properties": {
+                                    "title": trackName,
+                                    "icon": "monument"
+                                }
+                            }, {
+                                "type": "Feature",
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": coords[coords.length - 1]
+                                },
+                                "properties": {
+                                    "title": trackName,
+                                    "icon": "monument"
+                                }
+                            }]
+                        }
+                    },
+                    "layout": {
+                        "icon-image": "{icon}-15",
+                        "text-field": "{title}",
+                        "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+                        "text-offset": [0, 0.6],
+                        "text-anchor": "top"
+                    }
+                });
+
+                cb();
+            }
+        );
+
+    });
+}
+
+function DrawWaypoints(file, lat, long, cb) {
+    if (!lat || !long) {
+        return cb();
+    }
+
+    /*var pos = {
+        lat: parseFloat(lat.replace('S', '-')),
+        lng: parseFloat(long.replace('E', ''))
+    };
+
+    console.log(pos);
+
+    var marker = new google.maps.Marker({
+        map: map,
+        position: pos,
+        title: file
+    });
+
+    cb();*/
+
+    map.addLayer({
+        "id": "route",
+        "type": "line",
+        "source": {
+            "type": "geojson",
+            "data": {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [-122.48369693756104, 37.83381888486939],
+                        [-122.48348236083984, 37.83317489144141],
+                        [-122.48339653015138, 37.83270036637107],
+                        [-122.48356819152832, 37.832056363179625],
+                        [-122.48404026031496, 37.83114119107971],
+                        [-122.48404026031496, 37.83049717427869],
+                        [-122.48348236083984, 37.829920943955045],
+                        [-122.48356819152832, 37.82954808664175],
+                        [-122.48507022857666, 37.82944639795659],
+                        [-122.48610019683838, 37.82880236636284],
+                        [-122.48695850372314, 37.82931081282506],
+                        [-122.48700141906738, 37.83080223556934],
+                        [-122.48751640319824, 37.83168351665737],
+                        [-122.48803138732912, 37.832158048267786],
+                        [-122.48888969421387, 37.83297152392784],
+                        [-122.48987674713133, 37.83263257682617],
+                        [-122.49043464660643, 37.832937629287755],
+                        [-122.49125003814696, 37.832429207817725],
+                        [-122.49163627624512, 37.832564787218985],
+                        [-122.49223709106445, 37.83337825839438],
+                        [-122.49378204345702, 37.83368330777276]
+                    ]
+                }
+            }
+        },
+        "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+        },
+        "paint": {
+            "line-color": "#888",
+            "line-width": 8
+        }
+    });
+
+    cb();
+}

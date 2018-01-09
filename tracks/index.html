@@ -8,25 +8,27 @@
      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="/tracks/style.css">
 
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
+
     <title>North Island Tracks</title>
   </head>
   <body>
     <div id="loader">Loading waypoints...</div>
     <div id="map"></div>
     <script>
-      var map;
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZHdueiIsImEiOiJjamM3OWNibmkxcHM1MndqZG1peGRoaXBtIn0.lGkgRJ55UTVTVyAOYBX7hw';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/outdoors-v10',
+            center: [173.7147462,-41.3041495],
+            zoom: 5
 
-      function initMap() {
-        // Create a map object and specify the DOM element for display.
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -38.1261696, lng: 175.3187226},
-          zoom: 7
         });
-      }
+
 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN1Shj6dO4cuohAEXZM_e5_QXIYyVQy-M&amp;callback=initMap"
-    async defer></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/async/2.6.0/async.min.js"></script>
 
