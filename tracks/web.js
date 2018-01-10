@@ -1,5 +1,5 @@
 $(function () {
-    //alert("NOTE: Tracks may not be public, don't go on private property etc etc. You accept all responsibility");
+    alert("NOTE: Tracks may not be public, don't go on private property etc etc. You accept all responsibility");
 
     map.on('load', function () {
         $.get('/tracks/tracks.json', function (data) {
